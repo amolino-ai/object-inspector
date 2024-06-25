@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
@@ -9,6 +10,7 @@ body {
   color: #333;
 }
 
+/* Header Styles */
 .App-header {
   background-color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -26,7 +28,36 @@ body {
   margin: 0;
 }
 
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
 
+.header-buttons button {
+  padding: 10px 20px;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.header-buttons button:hover {
+  background-color: #21a1f1;
+}
+
+/* Main Content Styles */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Input and Button Styles */
 input {
   padding: 10px;
   margin: 10px;
@@ -48,4 +79,33 @@ button {
 
 button:hover {
   background-color: #21a1f1;
+}
+
+/* Document Details Styles */
+.document-details, .email-details, .analysis-details, .url-details {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  text-align: left;
+}
+
+.document-details h2, .email-details h2, .analysis-details h2, .url-details h2 {
+  color: #282c34;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #f9f9f9;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
