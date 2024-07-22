@@ -8,6 +8,8 @@ const EmailDetails: React.FC = () => {
     // Fetch email logic here
   };
 
+ 
+
   return (
     <div className="email-details">
       <h2>Email Details</h2>
@@ -16,7 +18,7 @@ const EmailDetails: React.FC = () => {
           <p>ID: {email.id}</p>
           <p>Subject: {email.subject}</p>
           <p>Body: {email.body}</p>
-          <button onClick={() => console.log('Download email')}>Download</button>
+          <button onClick={() => console.log("hey")}>Download</button>
         </div>
       ) : (
         <p>Select an email to see details.</p>
