@@ -1,11 +1,8 @@
 import React from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar';
-import DocumentDetails from './components/DocumentDetails';
 import EmailSearchBar from './components/EmailSearchBar';
-import EmailDetails from './components/EmailDetails';
-import AnalysisDetails from './components/AnalysisDetails';
-import URLInput from './components/URLInput';
+import EmailDetails from './components/UserDetailsCard';
 
 const App: React.FC = () => {
   return (
@@ -15,12 +12,8 @@ const App: React.FC = () => {
       </header>
       <div className="main-content">
         <SearchBar />
-        <DocumentDetails />
         <EmailSearchBar />
-        <EmailDetails />
-        <AnalysisDetails />
-        <URLInput />
-      </div>
+          </div>
     </div>
   );
 }
