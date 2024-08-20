@@ -14,24 +14,23 @@ const EmailSearchBar: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   const handleEmailSearch = async () => {
-      console.log('Searching for:', emailQuery);
-      if (emailQuery) {
-        try {
-          let response;
-          // Assuming query could be ID (numeric), email, or username
-            response = await fetch(`http://127.0.0.1:8000/users/${emailQuery}`);
-          if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`);
-          }
-          const data: Email = await response.json();
-          setEmail(data);
-          setError(null);
-        } catch (err: any) {
-          setError(err.message);
-          setEmail(null);
-        }
+  if (emailQuery) {
+    try {
+      const response = await fetch(`http://127.0.0.1:8000/emails/${encodeURIComponent(emailQuery)}`);
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} - ${response.statusText}`);
       }
-    };
+      const data = await response.json();
+      setEmail(data);
+      setError(null);
+    } catch (err : any) {
+      console.error("Fetch error:", err);
+      setError(err.message);
+      setEmail(null);
+    }
+  }
+};
+
 
   return (
     <div>
@@ -51,18 +50,18 @@ const EmailSearchBar: React.FC = () => {
           {Array.isArray(email) ? (
             email.length > 0 ? email.map(email => (
               <div key={email._id}>
-                <p>From: {email.from_}</p>
-                <p>To: {email.to}</p>
-                <p>Subject: {email.subject}</p>
-                <p>Source Path: {email.source_path}</p>
+                <p><strong>From</strong>: {email.from_}</p>
+                <p><strong>To</strong>: {email.to}</p>
+                <p><strong>Subject</strong>: {email.subject}</p>
+                <p><strong>Source Path</strong>: {email.source_path}</p>
               </div>
             )) : <p>No results found.</p>
           ) : (
             <div>
-              <p>From: {email.from_}</p>
-              <p>To: {email.to}</p>
-              <p>Subject: {email.subject}</p>
-              <p>Source Path: {email.source_path}</p>
+              <p><strong>From</strong>: {email.from_}</p>
+              <p><strong>To</strong>: {email.to}</p>
+              <p><strong>Subject</strong>: {email.subject}</p>
+              <p><strong>Source Path</strong>: {email.source_path}</p>
             </div>
           )}
         </div>

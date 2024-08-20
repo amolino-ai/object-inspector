@@ -50,17 +50,18 @@ const SearchBar: React.FC = () => {
           {Array.isArray(results) ? (
             results.map(user => (
               <div key={user._id}>
-                <p>ID: {user._id}</p>
-                <p>First Name: {user.first_name}</p>
-                <p>Last Name: {user.last_name}</p>
-                {/* <p>Email: {user.email_addresses} </p> */}
+                <p><strong>ID:</strong> {user._id}</p>
+                <p><strong>First Name:</strong> {user.first_name}</p>
+                <p><strong>Last Name:</strong> {user.last_name}</p>
+                <p><strong>Email Addresses:</strong> {user.email_addresses.map(emailObj => emailObj.email_address).join(', ')}</p>
               </div>
             ))
           ) : (
             <div>
-              <p>ID: {results._id}</p>
-              <p>First Name: {results.first_name}</p>
-              <p>Last Name: {results.last_name}</p>
+              <p><strong>ID:</strong> {results._id}</p>
+              <p><strong>First Name:</strong> {results.first_name}</p>
+              <p><strong>Last Name:</strong> {results.last_name}</p>
+              <p><strong>Email Addresses:</strong> {results.email_addresses.map(emailObj => emailObj.email_address).join(', ')}</p>
             </div>
           )}
         </div>
