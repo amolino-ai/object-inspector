@@ -35,7 +35,7 @@ const EmailSearchBar: React.FC = () => {
   return (
     <div>
       <h2>Email Details</h2>
-      <p>Search an email ID to see details.</p>
+      <p>Search an Email ID to see details.</p>
       <input
         type="text"
         value={emailQuery}

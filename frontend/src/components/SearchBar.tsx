@@ -42,7 +42,7 @@ const SearchBar: React.FC = () => {
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search by user ID"
       />
-      <button onClick={handleSearch}>Search user</button>
+      <button onClick={handleSearch}>Search User</button>
       {error && <div style={{ color: 'red' }}>{error}</div>}
       {results && (
         <div>
